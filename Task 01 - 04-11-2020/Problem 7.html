@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var expected = {foo: 6, bar: 5};
+        var actual = {foo: 5, bar: 6}
+        assertObjectsEqual(actual, expected, "detects that two objects are equal")
+
+        function assertObjectsEqual(actual, expected, testName){
+            if(JSON.stringify(expected)==JSON.stringify(actual))
+                console.log("PASSED")
+            else
+                console.log("FAILED ["+testName+"] Expected "+JSON.stringify(actual)+", but got "+JSON.stringify(expected))
+        }
+    </script>
+</body>
+</html>

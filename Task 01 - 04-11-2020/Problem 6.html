@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var array = [
+            [["firstName", "Vasanth"], ["lastName", "Raja"], ["age", 24], ["role", "JSWizard"]], 
+            [["firstName", "Sri"], ["lastName", "Devi"], ["age", 28], ["role", "Coder"]]
+        ];
+        transformGeekData(array)
+        function transformGeekData(arr){
+            let obj=[]
+            let inner={}
+            for(let i=0; i<arr.length;i++){
+                inner={}
+                for(let j=0; j<arr[i].length;j++)
+                    inner[arr[i][j][0]]=arr[i][j][1]
+                obj.push(inner)
+            }
+            console.log(obj)
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var array = [["make", "Ford"], ["model", "Mustang"], ["year", 1964]];
+        fromListToObject(array)
+
+        function fromListToObject(arr) {
+            let obj={}
+            for(let i=0; i<arr.length;i++)
+                obj[arr[i][0]]=arr[i][1]
+            console.log(obj)
+        }
+    </script>
+</body>
+</html>
