@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Weather Report</title>
+</head>
+<body onload="loadPage();">
+    <select id="country" onchange=getWeatherData();></select>
+    <p></p>
+    <script>
+
+        function loadPage(){
+            callApi(countryApiUrl, assignCountries)
+        }
+
+        function getWeatherData(){
+            let select= document.getElementById("country");
+            let p= document.getElementsByTagName("p")[0]
+            if(select.selectedIndex>=0){
+                let index= select.selectedIndex
+                p.innerHTML="<h2>Fetching weather data.... please wait couple of seconds</h2>"
+                var url=constructUri(countriesArray[index].latlng[0],
+                countriesArray[index].latlng[0],
+                weatherApi
+                )
+                callApi(url,printWeatherData)
+            }
+        }
+        var countriesArray=[]
+        var weatherApi="021bd6ce2776492701e9e4b912eb7d58"
+        var countryApiUrl="https://restcountries.eu/rest/v2/all"
+        var weatherApiUrl="https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}"
+
+        function callApi(url, callback){
+            var request=new XMLHttpRequest()
+            request.open("GET",url, true)
+            request.send()
+            request.onload=function(){
+                callback(this.response)
+            }
+        }
+
+        function printWeatherData(res){
+            var data=JSON.parse(res)
+            let p= document.getElementsByTagName("p")[0]
+            p.innerHTML=res
+        }
+
+        function constructUri(lat, lon, key){
+            return weatherApiUrl.replace("{lat}", lat).replace("{lon}", lon).replace("{API key}",key)
+        }
+
+        function assignCountries(res){
+            countriesArray= JSON.parse(res)
+            let options=""
+            for(let i=0;i<countriesArray.length;i++)
+                options+="<option>"+countriesArray[i].name+"</option>"
+            document.getElementById("country").innerHTML=options
+        }
+    </script>
+</body>
+</html>
