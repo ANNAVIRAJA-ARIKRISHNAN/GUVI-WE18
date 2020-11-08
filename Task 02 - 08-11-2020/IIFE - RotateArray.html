@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr=["guvi1","guvi2","guvi3","guvi4","guvi5","guvi6","guvi7"];
+        var rotateCount=4;
+        (function(){
+            console.log("Actual values  : ", arr)
+            for(let i=0; i<rotateCount;i++)
+                arr.unshift(arr.pop())
+            console.log("No of times shifted : ", rotateCount)                
+            console.log("Shifted values : ", arr)
+        })()
+    </script>
+</body>
+</html>

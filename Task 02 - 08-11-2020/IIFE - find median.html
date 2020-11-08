@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr1=[1,5,7,89,3,9,0,23,7,9,11];
+        var arr2=[98,64,4,7,26,8,64,37,9,437,4];
+        (function(){
+            if(arr1.length===arr2.length){
+                arr1.sort(function(a,b){return a-b});
+                arr2.sort(function(a,b){return a-b});
+                let median= parseInt(arr1.length/2)+1
+                console.log("Array 1 : ", arr1)
+                console.log("Array 1 Median : ",arr1[median])
+                console.log("Array 2 : ", arr2)
+                console.log("Array 2 Median : ",arr2[median])
+            }
+            else
+                console.log("Both array length's are different")
+        })()
+    </script>
+</body>
+</html>

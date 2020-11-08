@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr=[1,4,7,8,3,5,9,11,56,789,33,80,37,250, 23];
+        (function(){
+            console.log("Actual values : ", arr)
+            console.log("Prime Values  : ",arr.filter(x=>x===1? false: x===2?true:
+            (function(){
+                for(let val=2; val<x;val++){
+                    if(x%val===0)
+                        return false
+                }
+                return true
+            })(x)))
+        })()
+
+// for(let i=0; i<arr.length; i++){
+//     for(let val=2; val<arr[i];val++){
+//         if(arr[i]%val===0)
+//             return false
+//     }
+// }
+
+    </script>
+</body>
+</html>
