@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Rest countries API Uri
+        var restCountriesUri="https://restcountries.eu/rest/v2/all";
+        // XMLHttpRequest declaration
+        let request= new XMLHttpRequest();
+        //Create async request
+        request.open("GET",restCountriesUri,true);
+        // send a request
+        request.send();
+        // Request state change event initialization
+        request.onreadystatechange=function(){
+            // Verification for request completed successfully
+            if(this.readyState==4 && this.status==200)
+                console.log(this.status)
+            else if(this.readyState===4 && this.status!=200)
+                console.log("Response status : ", this.status)
+        }
+        // // Response received successfully
+        // request.onload=function(){
+        //     // Print Response text
+        //     console.log(this.responseText);
+        // }
+        // // Capturing request errors
+        // request.onerror=function(){
+        //     console.log("~~~ An error occurred during the transaction ~~~");
+        // }
+    </script>
+</body>
+</html>

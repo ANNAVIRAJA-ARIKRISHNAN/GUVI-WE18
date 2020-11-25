@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var populationRange=200000;
+        // Rest countries API Uri
+        var restCountriesUri="https://restcountries.eu/rest/v2/all";
+        // XMLHttpRequest declaration
+        let request= new XMLHttpRequest();
+        //Create async request
+        request.open("GET",restCountriesUri,true);
+        // send a request
+        request.send();
+
+        // Response received successfully
+        request.onload=function(){
+            // Invoke method for filter population less than 2 lakhs countries name
+            printPopulationCountries(this.responseText);
+        }
+        // Capturing request errors
+        request.onerror=function(){
+            console.log("~~~ An error occurred during the transaction ~~~");
+        }
+        
+        // Method for filter population less than 2 lakhs countries only
+        function printPopulationCountries( res){
+            // convert raw response to object array
+            var countries=JSON.parse(res);
+            // Filter and Map functions for getting result
+            var output= countries.filter(x=>{return x.population<populationRange;}).map(x=>x.name);
+            // Print the output
+            console.log(output)
+        }
+    </script>
+</body>
+</html>

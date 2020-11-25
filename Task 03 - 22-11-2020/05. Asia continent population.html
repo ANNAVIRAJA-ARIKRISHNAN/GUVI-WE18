@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Rest countries API Uri
+        var restCountriesUri="https://restcountries.eu/rest/v2/all";
+        // XMLHttpRequest declaration
+        let request= new XMLHttpRequest();
+        //Create async request
+        request.open("GET",restCountriesUri,true);
+        // send a request
+        request.send();
+
+        // Response received successfully
+        request.onload=function(){
+            // Invoke method for Asia continent countries total population
+            printAsiaContinentPopulation(this.responseText);
+        }
+        // Capturing request errors
+        request.onerror=function(){
+            console.log("~~~ An error occurred during the transaction ~~~");
+        }
+        
+        // print Asia continent countries total population
+        function printAsiaContinentPopulation( res){
+            // convert raw response to object array
+            var countries=JSON.parse(res);
+            // Filter and Reduce functions for getting result
+            var output= countries.filter(x=>{return x.region==='Asia';}).reduce((initial, index)=>{ return initial+=index.population},0);
+            // Print the output
+            console.log("Asia continent population : ",output);
+        }
+    </script>
+</body>
+</html>
