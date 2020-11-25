@@ -15,23 +15,26 @@
         request.open("GET",restCountriesUri,true);
         // send a request
         request.send();
-        // Request state change event initialization
-        request.onreadystatechange=function(){
-            // Verification for request completed successfully
-            if(this.readyState==4 && this.status==200)
-                console.log(this.status)
-            else if(this.readyState===4 && this.status!=200)
-                console.log("Response status : ", this.status)
+        
+        // Response received successfully
+        request.onload=function(){
+            // Print countries name base on USD currencies
+            printUSDbasedCountries(this.responseText);
         }
-        // // Response received successfully
-        // request.onload=function(){
-        //     // Print Response text
-        //     console.log(this.responseText);
-        // }
-        // // Capturing request errors
-        // request.onerror=function(){
-        //     console.log("~~~ An error occurred during the transaction ~~~");
-        // }
+        // Capturing request errors
+        request.onerror=function(){
+            console.log("~~~ An error occurred during the transaction ~~~");
+        }
+
+        // print countries name base on USD currencies
+        function printUSDbasedCountries(res){
+             // convert raw response to object array
+            var countries= JSON.parse(res);
+            // filter and some method for get countries based on USD currencies
+            var usdCountries= countries.filter(x=>x.currencies.some(c=>c.code==="USD"));
+            console.log(usdCountries);
+            usdCountries.forEach(x=>console.log(x.name));
+        }
     </script>
 </body>
 </html>
