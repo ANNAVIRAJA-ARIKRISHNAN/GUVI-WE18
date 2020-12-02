@@ -1,0 +1,19 @@
+body {
+  background-color: pink;
+  margin: 20px;
+}
+table {
+  width: 100%;
+}
+
+.profilePic {
+  width: 150px;
+  margin: 0px auto;
+  display: block;
+  border-radius: 50%;
+  border: 5px dotted #fabe28;
+}
+
+.header > table {
+  background-color: blue;
+}
