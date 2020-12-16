@@ -1,0 +1,112 @@
+.container {
+  width: 100%;
+  background-color: white;
+  height: auto;
+}
+.product {
+  position: relative;
+  width: 30%;
+  margin: 5px;
+  height: auto;
+  border: 1px solid gray;
+  display: inline-block;
+  padding-bottom: 30px;
+}
+img {
+  width: 100%;
+}
+.innerBody {
+  width: 94%;
+  margin: 3%;
+}
+.title {
+  font-size: 17px;
+  font-weight: bold;
+}
+.description {
+  padding: -5px;
+  font-size: 15px;
+  text-align: justify;
+}
+.left {
+  float: left;
+  padding: 10px 0px;
+}
+.right {
+  position: absolute;
+  right: 40px;
+}
+.right button {
+  background-color: #25a945;
+  padding: 10px;
+  color: white;
+  border-radius: 5px;
+  border: none;
+}
+
+@media (max-width: 700px) and (min-width: 500px) {
+  .right {
+    position: absolute;
+    right: 10px;
+  }
+  .title {
+    font-size: 14px;
+    font-weight: bold;
+  }
+  .description {
+    padding: -5px;
+    font-size: 12px;
+    text-align: justify;
+  }
+  .left {
+    float: left;
+    padding: 10px 0px;
+    font-size: 12px;
+  }
+  .right button {
+    font-size: 12px;
+  }
+}
+@media (max-width: 500px) and (min-width: 350px) {
+  .product {
+    position: relative;
+    width: 45%;
+    margin: 5px;
+    height: auto;
+    border: 1px solid gray;
+    display: inline-block;
+    padding-bottom: 30px;
+  }
+  .title {
+    font-size: 12px;
+    font-weight: bold;
+  }
+  .description {
+    padding: -5px;
+    font-size: 9px;
+    text-align: justify;
+  }
+  .left {
+    float: left;
+    padding: 10px 0px;
+    font-size: 9px;
+  }
+  .right {
+    position: absolute;
+    right: 20px;
+  }
+  .right button {
+    font-size: 9px;
+  }
+}
+@media screen and (max-width: 350px) {
+  .product {
+    position: relative;
+    width: 95%;
+    margin: 5px;
+    height: auto;
+    border: 1px solid gray;
+    display: inline-block;
+    padding-bottom: 30px;
+  }
+}

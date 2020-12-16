@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            width: 50%;
+            margin: 0 auto;
+            background-color: #E9ECEF;
+        }
+        input[type="text"], input[type="number"], input[type="email"], select{
+            width: 100%;
+            border: 1px solid gray;
+            box-sizing: border-box;
+            outline: none;
+            border-radius: 4px;
+            margin: 8px 0px;
+            padding: 8px;
+        }
+        .holder input[type="text"], .holder input[type="number"], .holder input[type="email"], .holder select{
+            padding-left: 40px;
+        }
+        .holder{
+            position: relative;
+        }
+        .holder i{
+            position: absolute;
+    top: 9px;
+    left: 1px;
+    padding: 7px 5px;
+    background-color: #E9ECEF;
+    border-radius: 4px 0px 0px 4px;
+        }
+        button{
+      	padding:10px;
+          text-align: center;
+        margin: 0 auto;
+        border-width:0px;
+        border-radius:5px;
+        width: 150px;
+        color:white;
+        background-color:#28A744;
+      }
+    </style>
+
+</head>
+<body>
+    <form method="GET">
+    <div class="conatiner">
+        <table>
+            <tr>
+                <td>Full Name</td>
+                <td>
+                    <div class="holder ">
+                        <input type="text" placeholder="Full Name" required>
+                        <i class="fa fa-user fa-lg fa-fw" aria-hidden="true"></i>
+                      </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Address Line1</td>
+                <td>
+                    <div class="holder ">
+                        <input type="text" placeholder="Address Line 1" required>
+                        <i class="fa fa-address-book-o fa-lg fa-fw" aria-hidden="true"></i>
+                      </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Address Line2</td>
+                <td>
+                    <div class="holder ">
+                        <input type="text" placeholder="Address Line 2" required>
+                        <i class="fa fa-address-book-o fa-lg fa-fw" aria-hidden="true"></i>
+                      </div>
+                </td>
+            </tr>
+            <tr>
+                <td>City</td>
+                <td>
+                    <div class="holder ">
+                        <input type="text" placeholder="City" required>
+                        <i class="fa fa-building-o fa-lg fa-fw" aria-hidden="true"></i>
+                      </div>
+                </td>
+            </tr>
+            <tr>
+                <td>State/Province/Region</td>
+                <td>
+                    <div class="holder ">
+                        <input type="text" placeholder="State/Province/Region" required>
+                        <i class="fa fa-map-marker fa-lg fa-fw" aria-hidden="true"></i>
+                      </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Postal Code / ZIP</td>
+                <td>
+                    <div class="holder ">
+                        <input type="number" placeholder="Postal Code/ZIP" required>
+                        <i class="fa fa-envelope-open fa-lg fa-fw" aria-hidden="true"></i>
+                      </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Country</td>
+                <td>
+                    <div class="holder ">
+                        <input type="text" placeholder="Country" required>
+                        <i class="fa fa-globe fa-lg fa-fw" aria-hidden="true"></i>
+                      </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td>
+                    <div class="holder ">
+                        <!-- <input type="email" placeholder="Email" required> -->
+                        <select>
+                            <optgroup>
+                                <option value=0>India</option>
+                            </optgroup>
+                        </select>
+                        <i class="fa fa-envelope-o fa-lg fa-fw" aria-hidden="true"></i>
+                      </div>
+                </td>
+            </tr>
+            <tr>
+                <td>Phone Number</td>
+                <td>
+                    <div class="holder ">
+                        <input type="number" placeholder="Phone Number" required>
+                        <i class="fa fa-mobile fa-lg fa-fw" aria-hidden="true"></i>
+                      </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center;">
+                    <button type="submit" onclick="submit();">Submit</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <script src="https://use.fontawesome.com/a1e2774119.js"></script>
+    <script>
+        function submit(){
+            alert("Form submitted successfully");
+        }
+    </script>
+</form>
+</body>
+</html>
