@@ -1,0 +1,100 @@
+body {
+  /* background-color: pink; */
+  margin: 20px;
+}
+
+table {
+  width: 100%;
+}
+
+.profilePic {
+  width: 150px;
+  margin: 0px auto;
+  display: block;
+  border-radius: 50%;
+  border: 5px dotted #fabe28;
+}
+
+.header > table {
+  background-color: #565656;
+  position: relative;
+}
+h1 {
+  color: black;
+  background-color: #fabe28;
+  padding: 20px;
+  font-weight: bold;
+  top: 140px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  width: 250px;
+  display: inline-block;
+  position: absolute;
+  border-radius: 10px;
+  letter-spacing: 2px;
+}
+.grayRow {
+  background: #eeeeee;
+  height: 25px;
+}
+.center {
+  text-align: center;
+  background-color: white;
+  padding: 5px;
+}
+.bottomBorder {
+  border-bottom: 2px solid #cfcfcf;
+}
+.container {
+  display: flex;
+  margin-top: 15px;
+}
+.left,
+.right {
+  display: inline;
+  width: 50%;
+  padding: 0px 50px;
+}
+
+.thumb {
+  border: 2px dotted#fabe28;
+  background-color: #565656;
+  border-radius: 50%;
+  padding: 10px;
+}
+.left > div {
+  padding-bottom: 15px;
+}
+.subHeading {
+  text-align: center;
+  display: block;
+  padding-bottom: 10px;
+  font-weight: bold;
+}
+input[type="range"] {
+  width: 100%;
+  color: #fabe28;
+}
+td {
+  width: 50%;
+}
+.rightAlign {
+  text-align: right;
+  display: block;
+}
+.left {
+  border-right: 1px solid #cfcfcf;
+}
+.head {
+  display: flex;
+}
+.head > h2 {
+  margin-left: 15px;
+  font-weight: bold;
+}
+.head > img {
+  width: 40px;
+}
