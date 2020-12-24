@@ -33,7 +33,7 @@ function createCountries(response) {
 function createCountry(country) {
   let col = createElement(
     "div",
-    "card text-center col-4 col-lg-4 col-md-4 col-sm-6 cardbg text-white",
+    "card text-center col-12 col-lg-4 col-md-6 col-sm-6 col-xs-12 cardbg text-white",
     ""
   );
   let h3 = createElement("h3", "card-header mt-3 bg-dark", country.name);
