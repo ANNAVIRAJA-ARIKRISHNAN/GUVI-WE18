@@ -1,0 +1,26 @@
+#mainScreen,
+#questionBody {
+  margin: 0 auto;
+  margin: 10% 15%;
+}
+
+.list-group-item {
+  padding: 25px;
+}
+.list-group-item:hover,
+.active {
+  background-color: rgb(192, 191, 191);
+  color: rgb(0, 0, 0);
+}
+#next {
+  margin-top: 2%;
+  position: absolute;
+  margin-right: 15%;
+  right: 0px;
+}
+.right {
+  background-color: greenyellow;
+}
+.wrong {
+  background-color: red;
+}
